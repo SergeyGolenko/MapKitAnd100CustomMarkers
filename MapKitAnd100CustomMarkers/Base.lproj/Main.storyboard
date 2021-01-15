@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,29 +13,31 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapKitAnd100CustomMarkers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2Oq-cw-I6l">
-                                <rect key="frame" x="0.0" y="296" width="414" height="304"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="304" id="u4y-tp-PBW"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2Oq-cw-I6l" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="460-Yc-xLd"/>
-                            <constraint firstItem="2Oq-cw-I6l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wtL-ev-whv"/>
-                            <constraint firstItem="2Oq-cw-I6l" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xiu-O4-36e"/>
-                            <constraint firstItem="2Oq-cw-I6l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="z7Y-uV-D0C"/>
+                            <constraint firstItem="2Oq-cw-I6l" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XzQ-RB-hSs"/>
+                            <constraint firstAttribute="bottom" secondItem="2Oq-cw-I6l" secondAttribute="bottom" id="blk-bH-TQd"/>
+                            <constraint firstItem="2Oq-cw-I6l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="crR-7p-Wku"/>
+                            <constraint firstItem="2Oq-cw-I6l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gOi-nJ-27l"/>
+                            <constraint firstItem="2Oq-cw-I6l" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hJt-D6-00H"/>
+                            <constraint firstAttribute="trailing" secondItem="2Oq-cw-I6l" secondAttribute="trailing" id="urZ-XB-fJU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="2Oq-cw-I6l" id="CAo-PG-oQe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-214.49275362318843" y="140.625"/>
+            <point key="canvasLocation" x="-214.95535714285714" y="140.57971014492756"/>
         </scene>
     </scenes>
     <resources>

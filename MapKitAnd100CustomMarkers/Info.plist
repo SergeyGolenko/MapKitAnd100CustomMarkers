@@ -56,10 +56,15 @@
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
+        <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+            <string>I do not really need this</string>
+            <key>NSLocationWhenInUseUsageDescription</key>
+            <string>To give you information</string>
+            <key>UISupportedInterfaceOrientations~ipad</key>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
+    </array>
 </dict>
 </plist>
