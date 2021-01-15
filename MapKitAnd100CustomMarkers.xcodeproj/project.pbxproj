@@ -14,6 +14,7 @@
 		2C406A4725B19557000EAADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C406A4625B19557000EAADE /* Assets.xcassets */; };
 		2C406A4A25B19557000EAADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C406A4825B19557000EAADE /* LaunchScreen.storyboard */; };
 		2C406A5925B19CF8000EAADE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C406A5825B19CF8000EAADE /* CoreLocation.framework */; };
+		2C406A5C25B1C591000EAADE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C406A5B25B1C591000EAADE /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2C406A4925B19557000EAADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C406A4B25B19557000EAADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C406A5825B19CF8000EAADE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2C406A5B25B1C591000EAADE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				2C406A3D25B19552000EAADE /* AppDelegate.swift */,
 				2C406A3F25B19552000EAADE /* SceneDelegate.swift */,
 				2C406A4125B19552000EAADE /* ViewController.swift */,
+				2C406A5B25B1C591000EAADE /* Extension.swift */,
 				2C406A4325B19552000EAADE /* Main.storyboard */,
 				2C406A4625B19557000EAADE /* Assets.xcassets */,
 				2C406A4825B19557000EAADE /* LaunchScreen.storyboard */,
@@ -152,6 +155,7 @@
 				2C406A4225B19552000EAADE /* ViewController.swift in Sources */,
 				2C406A3E25B19552000EAADE /* AppDelegate.swift in Sources */,
 				2C406A4025B19552000EAADE /* SceneDelegate.swift in Sources */,
+				2C406A5C25B1C591000EAADE /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
