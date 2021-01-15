@@ -6,9 +6,21 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,CLLocationManagerDelegate {
+    
+    //MARK: - Properties
+    var  manager = CLLocationManager()
+    
 
+    
+    
+    
+    
+    
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
