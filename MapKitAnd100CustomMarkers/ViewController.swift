@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController,MKMapViewDelegate {
+class ViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
@@ -67,33 +67,59 @@ class ViewController: UIViewController,MKMapViewDelegate {
         
 
     }
-    
-//
-//    func createPointForKiev(){
-//         pin = MyAnnotation(coordinate: CLLocationCoordinate2D(latitude: latitudeCoordinate, longitude: longitudeCoordinate), title: "KIEV", subtitle: "KIEV - FOREVA")
-//        mapView.addAnnotation(pin)
-//    }
-    
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let annotationView = MKAnnotationView(annotation: pin, reuseIdentifier: "pin")
-        annotationView.image = UIImage(named: "circle")
-        let transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-        annotationView.transform = transform
-        return annotationView
-    }
-    
-  
+ 
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-       // createPointForKiev()
-        
         loadCoordinateUkraine()
-   //     addAnnotation()
         generateAnnoLoc()
     }
-
-
 }
 
+extension ViewController : MKMapViewDelegate {
+   
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard !(annotation is MKUserLocation) else {return nil}
+        
+        let annotationIdentifier = "AnnotationIdentifier"
+        
+        var annotationView: MKAnnotationView?
+        
+        
+        if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) {
+            annotationView = dequeuedAnnotationView
+            annotationView?.annotation = annotation
+        }
+        else {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+        }
+        if let annotationView2 = annotationView {
+            annotationView2.canShowCallout = true
+           let passwordContainerView : UIView = {
+                   let containerView = UIView()
+                   containerView.backgroundColor = .red
+            containerView.setHeight(height:annotationView2.bounds.height)
+            containerView.setWidth(width: annotationView2.bounds.width)
+            
+            
+            let iv = UILabel()
+            iv.backgroundColor = .yellow
+            iv.text = "IOS"
+                   //iv.centerY(inView: containerView)
+            iv.setWidth(width: 30)
+            iv.setHeight(height: 30)
+            
+           
+            containerView.addSubview(iv)
+            iv.centerY(inView: containerView)
+            iv.centerX(inView: containerView)
+           
+                   return containerView
+               }()
+            annotationView2.addSubview(passwordContainerView)
+        }
+        return annotationView
+    }
+    
+}
