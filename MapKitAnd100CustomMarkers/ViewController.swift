@@ -15,36 +15,32 @@ class ViewController: UIViewController {
     
     
     //MARK: - Actions
+    @IBAction func refreshButtonTapped(_ sender: Any) {
     
+    }
     
     //MARK: - Properties
-    var pin : MKAnnotation!
-   
-  
     let latitudeCoordinate = CLLocationDegrees(49.22)
     let longitudeCoordinate = CLLocationDegrees(31.10)
+    var arrayAnnotation : [MKAnnotationView] = []
    
 
     
     //MARK: - Functions
+    
+    func randomNumberForLabel(from:Int,to:Int) -> String{
+        let number = Int.random(in: from...to)
+        return String(number)
+    }
+    
     func loadCoordinateUkraine(){
-       
         let locationCoordinate2D = CLLocationCoordinate2D(latitude: latitudeCoordinate, longitude: longitudeCoordinate)
         let longitudeUkraine = CLLocationDistance(131_600_0)
         let latitudeUkraine = CLLocationDistance(750_000)
-        
         let centerUkraine = MKCoordinateRegion(center: locationCoordinate2D, latitudinalMeters: latitudeUkraine, longitudinalMeters:longitudeUkraine)
         mapView.setRegion(centerUkraine, animated: true)
     }
     
-//    func addAnnotation(){
-//        annotation.coordinate = CLLocationCoordinate2D(latitude: latitudeCoordinate, longitude: longitudeCoordinate)
-//        annotation.title = "Ukraine"
-//        annotation.subtitle = "my small Ukraine"
-//        mapView.addAnnotation(annotation)
-//    }
-//
-   
     
     func randomBetweenNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat {
         return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
@@ -59,13 +55,9 @@ class ViewController: UIViewController {
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude:CLLocationDegrees(randomBetweenNumbers(firstNum: 46, secondNum: 52)), longitude: CLLocationDegrees(randomBetweenNumbers(firstNum:23, secondNum: 39)))
             let randomTitleNumber = Int.random(in: 1...100)
-            annotation.title = "\(randomTitleNumber)"
-            annotation.subtitle = "\(annotation.coordinate.longitude)"
+            annotation.title = randomNumberForLabel(from: 1, to: 10)
             mapView.addAnnotation(annotation)
         }
-        
-        
-
     }
  
     //MARK: - LifeCycle
@@ -81,12 +73,8 @@ extension ViewController : MKMapViewDelegate {
    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation) else {return nil}
-        
         let annotationIdentifier = "AnnotationIdentifier"
-        
         var annotationView: MKAnnotationView?
-        
-        
         if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) {
             annotationView = dequeuedAnnotationView
             annotationView?.annotation = annotation
@@ -96,30 +84,33 @@ extension ViewController : MKMapViewDelegate {
         }
         if let annotationView2 = annotationView {
             annotationView2.canShowCallout = true
-           let passwordContainerView : UIView = {
+            
+           let redCircle : UIView = {
                    let containerView = UIView()
                    containerView.backgroundColor = .red
-            containerView.setHeight(height:annotationView2.bounds.height)
-            containerView.setWidth(width: annotationView2.bounds.width)
-            
-            
+            containerView.setHeight(height:16)
+            containerView.setWidth(width:16)
+            let radius : CGFloat = 8
+            containerView.layer.cornerRadius = radius
             let iv = UILabel()
-            iv.backgroundColor = .yellow
-            iv.text = "IOS"
-                   //iv.centerY(inView: containerView)
-            iv.setWidth(width: 30)
-            iv.setHeight(height: 30)
-            
-           
+            iv.text = randomNumberForLabel(from: 1, to: 10)
+            iv.textColor = .white
+            iv.textAlignment = .center
+            iv.font = UIFont.boldSystemFont(ofSize: 13)
+            iv.adjustsFontSizeToFitWidth = true
+            iv.setWidth(width: 10)
+            iv.setHeight(height: 10)
             containerView.addSubview(iv)
             iv.centerY(inView: containerView)
             iv.centerX(inView: containerView)
-           
                    return containerView
                }()
-            annotationView2.addSubview(passwordContainerView)
+            annotationView2.addSubview(redCircle)
+            arrayAnnotation.append(annotationView2)
+            
         }
+        
         return annotationView
     }
-    
+
 }
