@@ -8,15 +8,31 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController {
+class MapViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
     
     
     //MARK: - Actions
-    @IBAction func refreshButtonTapped(_ sender: Any) {
     
+    
+    @IBAction func check(_ sender: Any) {
+        
+  
+        
+    }
+    
+    
+    @IBAction func refreshButtonTapped(_ sender: Any) {
+        
+        let annotations = mapView.annotations.filter({ !($0 is MKUserLocation) })
+        mapView.removeAnnotations(annotations)
+        print(arrayAnnotation.count)
+        arrayAnnotation.removeAll()
+        generateAnnoLoc()
+        
+        
     }
     
     //MARK: - Properties
@@ -50,14 +66,15 @@ class ViewController: UIViewController {
         var num = 0
         //First we declare While to repeat adding Annotation
         while num != 100 {
-            num += 1
+                num += 1
             //Add Annotation
             let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude:CLLocationDegrees(randomBetweenNumbers(firstNum: 46, secondNum: 52)), longitude: CLLocationDegrees(randomBetweenNumbers(firstNum:23, secondNum: 39)))
-            let randomTitleNumber = Int.random(in: 1...100)
-            annotation.title = randomNumberForLabel(from: 1, to: 10)
-            mapView.addAnnotation(annotation)
+                annotation.coordinate = CLLocationCoordinate2D(latitude:CLLocationDegrees(self.randomBetweenNumbers(firstNum: 46, secondNum: 52)), longitude: CLLocationDegrees(self.randomBetweenNumbers(firstNum:23, secondNum: 39)))
+                let randomTitleNumber = Int.random(in: 1...100)
+                annotation.title = self.randomNumberForLabel(from: 1, to: 10)
+                self.mapView.addAnnotation(annotation)
         }
+        
     }
  
     //MARK: - LifeCycle
@@ -69,7 +86,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController : MKMapViewDelegate {
+extension MapViewController : MKMapViewDelegate {
    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation) else {return nil}
@@ -107,10 +124,10 @@ extension ViewController : MKMapViewDelegate {
                }()
             annotationView2.addSubview(redCircle)
             arrayAnnotation.append(annotationView2)
-            
         }
-        
         return annotationView
     }
+    
+    
 
 }
