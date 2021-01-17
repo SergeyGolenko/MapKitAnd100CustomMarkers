@@ -19,7 +19,10 @@ class MapViewController: UIViewController {
     
     @IBAction func check(_ sender: Any) {
         
-  
+        for i in arrayAnnotation {
+            i.isUserInteractionEnabled = false
+            
+        }
         
     }
     
@@ -43,6 +46,10 @@ class MapViewController: UIViewController {
 
     
     //MARK: - Functions
+    func createCenterAnnotation(){
+        let pin = SquareAnnotation(title: "Center Ukraine", subtitle: "center", coordinate: CLLocationCoordinate2D(latitude: latitudeCoordinate, longitude: longitudeCoordinate))
+            mapView.addAnnotation(pin)
+    }
     
     func randomNumberForLabel(from:Int,to:Int) -> String{
         let number = Int.random(in: from...to)
@@ -71,7 +78,7 @@ class MapViewController: UIViewController {
             let annotation = MKPointAnnotation()
                 annotation.coordinate = CLLocationCoordinate2D(latitude:CLLocationDegrees(self.randomBetweenNumbers(firstNum: 46, secondNum: 52)), longitude: CLLocationDegrees(self.randomBetweenNumbers(firstNum:23, secondNum: 39)))
                 let randomTitleNumber = Int.random(in: 1...100)
-                annotation.title = self.randomNumberForLabel(from: 1, to: 10)
+            //annotation.title = String(Int(annotation.coordinate.latitude))
                 self.mapView.addAnnotation(annotation)
         }
         
@@ -83,14 +90,15 @@ class MapViewController: UIViewController {
         mapView.delegate = self
         loadCoordinateUkraine()
         generateAnnoLoc()
+        createCenterAnnotation()
     }
 }
 
 extension MapViewController : MKMapViewDelegate {
    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard !(annotation is MKUserLocation) else {return nil}
-        let annotationIdentifier = "AnnotationIdentifier"
+        guard annotation is SquareAnnotation else {return nil}
+        let annotationIdentifier = "circle"
         var annotationView: MKAnnotationView?
         if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) {
             annotationView = dequeuedAnnotationView
@@ -128,6 +136,22 @@ extension MapViewController : MKMapViewDelegate {
         return annotationView
     }
     
+    
+    // отключает прикосновение к annotation
+    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
+        for view in views {
+            view.isEnabled = true
+        }
+    }
+    
+    
+    
+//    func mapView(_ mapView: MKMapView, clusterAnnotationForMemberAnnotations memberAnnotations: [MKAnnotation]) -> MKClusterAnnotation {
+//
+//
+//    }
+    
+
     
 
 }
