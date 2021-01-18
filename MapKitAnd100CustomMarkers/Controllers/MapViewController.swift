@@ -58,6 +58,7 @@ class MapViewController: UIViewController {
         mapView.delegate = self
         loadCoordinateUkraine()
         generateAnnoLoc()
+//        mapView.register(CircleAnnotation.self, forAnnotationViewWithReuseIdentifier: "circle")
     }
 }
 
@@ -68,8 +69,8 @@ extension MapViewController : MKMapViewDelegate {
         guard circleAnnotation is CircleAnnotation else {return nil}
         let annotationIdentifier = "circle"
         var annotationView: MKAnnotationView?
-        if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) {
-            annotationView = dequeuedAnnotationView
+        if let circleAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) {
+            annotationView = circleAnnotationView
             annotationView?.annotation = circleAnnotation
         }
         else {
@@ -102,6 +103,11 @@ extension MapViewController : MKMapViewDelegate {
         }
         return annotationView
     }
+    
+//    func mapView(_ mapView: MKMapView, clusterAnnotationForMemberAnnotations memberAnnotations: [MKAnnotation]) -> MKClusterAnnotation {
+//      
+//            
+//    }
     
     //turns off touch annotation
     func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
