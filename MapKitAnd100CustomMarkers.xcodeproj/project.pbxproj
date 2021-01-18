@@ -14,9 +14,8 @@
 		2C406A4725B19557000EAADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C406A4625B19557000EAADE /* Assets.xcassets */; };
 		2C406A4A25B19557000EAADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C406A4825B19557000EAADE /* LaunchScreen.storyboard */; };
 		2C406A5925B19CF8000EAADE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C406A5825B19CF8000EAADE /* CoreLocation.framework */; };
-		2C406A5C25B1C591000EAADE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C406A5B25B1C591000EAADE /* Extension.swift */; };
-		2C406A7325B4608B000EAADE /* SquareAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C406A7225B4608B000EAADE /* SquareAnnotation.swift */; };
 		2C406A7625B4631F000EAADE /* CircleAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C406A7525B4631F000EAADE /* CircleAnnotation.swift */; };
+		2C406A8125B588A7000EAADE /* Extension for constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C406A8025B588A7000EAADE /* Extension for constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +28,8 @@
 		2C406A4925B19557000EAADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C406A4B25B19557000EAADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C406A5825B19CF8000EAADE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		2C406A5B25B1C591000EAADE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		2C406A7225B4608B000EAADE /* SquareAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareAnnotation.swift; sourceTree = "<group>"; };
 		2C406A7525B4631F000EAADE /* CircleAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAnnotation.swift; sourceTree = "<group>"; };
+		2C406A8025B588A7000EAADE /* Extension for constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension for constraints.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +64,10 @@
 		2C406A3C25B19552000EAADE /* MapKitAnd100CustomMarkers */ = {
 			isa = PBXGroup;
 			children = (
-				2C406A3D25B19552000EAADE /* AppDelegate.swift */,
-				2C406A3F25B19552000EAADE /* SceneDelegate.swift */,
-				2C406A4125B19552000EAADE /* MapViewController.swift */,
-				2C406A7225B4608B000EAADE /* SquareAnnotation.swift */,
-				2C406A7525B4631F000EAADE /* CircleAnnotation.swift */,
-				2C406A5B25B1C591000EAADE /* Extension.swift */,
+				2C406A8625B5893A000EAADE /* System */,
+				2C406A8425B588E7000EAADE /* Model */,
+				2C406A8525B588FD000EAADE /* Controllers */,
+				2C406A8325B588B7000EAADE /* Helpers */,
 				2C406A4325B19552000EAADE /* Main.storyboard */,
 				2C406A4625B19557000EAADE /* Assets.xcassets */,
 				2C406A4825B19557000EAADE /* LaunchScreen.storyboard */,
@@ -86,6 +82,39 @@
 				2C406A5825B19CF8000EAADE /* CoreLocation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C406A8325B588B7000EAADE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2C406A8025B588A7000EAADE /* Extension for constraints.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2C406A8425B588E7000EAADE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C406A7525B4631F000EAADE /* CircleAnnotation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2C406A8525B588FD000EAADE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C406A4125B19552000EAADE /* MapViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2C406A8625B5893A000EAADE /* System */ = {
+			isa = PBXGroup;
+			children = (
+				2C406A3D25B19552000EAADE /* AppDelegate.swift */,
+				2C406A3F25B19552000EAADE /* SceneDelegate.swift */,
+			);
+			path = System;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,12 +187,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C406A7325B4608B000EAADE /* SquareAnnotation.swift in Sources */,
+				2C406A8125B588A7000EAADE /* Extension for constraints.swift in Sources */,
 				2C406A4225B19552000EAADE /* MapViewController.swift in Sources */,
 				2C406A7625B4631F000EAADE /* CircleAnnotation.swift in Sources */,
 				2C406A3E25B19552000EAADE /* AppDelegate.swift in Sources */,
 				2C406A4025B19552000EAADE /* SceneDelegate.swift in Sources */,
-				2C406A5C25B1C591000EAADE /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,11 +32,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nxr-15-1PO">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="Lzz-Hq-NIH">
-                            <connections>
-                                <action selector="check:" destination="BYZ-38-t0r" id="p73-ec-uPz"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="BGw-Zd-wpl">
                             <color key="tintColor" systemColor="systemBlueColor"/>
                             <connections>
@@ -50,7 +45,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="544" y="-245"/>
+            <point key="canvasLocation" x="438" y="-246"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Eih-Hh-hUG">
