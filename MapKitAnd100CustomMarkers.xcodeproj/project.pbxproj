@@ -16,6 +16,8 @@
 		2C406A5925B19CF8000EAADE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C406A5825B19CF8000EAADE /* CoreLocation.framework */; };
 		2C406A7625B4631F000EAADE /* CircleAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C406A7525B4631F000EAADE /* CircleAnnotation.swift */; };
 		2C406A8125B588A7000EAADE /* Extension for constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C406A8025B588A7000EAADE /* Extension for constraints.swift */; };
+		2C406A8B25B5BA72000EAADE /* CircleAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C406A8A25B5BA72000EAADE /* CircleAnnotationView.swift */; };
+		2C406A9225B6F0C0000EAADE /* ClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C406A9125B6F0C0000EAADE /* ClusterAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		2C406A5825B19CF8000EAADE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2C406A7525B4631F000EAADE /* CircleAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAnnotation.swift; sourceTree = "<group>"; };
 		2C406A8025B588A7000EAADE /* Extension for constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension for constraints.swift"; sourceTree = "<group>"; };
+		2C406A8A25B5BA72000EAADE /* CircleAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAnnotationView.swift; sourceTree = "<group>"; };
+		2C406A9125B6F0C0000EAADE /* ClusterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				2C406A7525B4631F000EAADE /* CircleAnnotation.swift */,
+				2C406A8A25B5BA72000EAADE /* CircleAnnotationView.swift */,
+				2C406A9125B6F0C0000EAADE /* ClusterAnnotationView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,6 +198,8 @@
 				2C406A7625B4631F000EAADE /* CircleAnnotation.swift in Sources */,
 				2C406A3E25B19552000EAADE /* AppDelegate.swift in Sources */,
 				2C406A4025B19552000EAADE /* SceneDelegate.swift in Sources */,
+				2C406A9225B6F0C0000EAADE /* ClusterAnnotationView.swift in Sources */,
+				2C406A8B25B5BA72000EAADE /* CircleAnnotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
